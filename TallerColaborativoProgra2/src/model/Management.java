@@ -89,4 +89,6 @@ public class Management {
 		}
 		return intersectingText;
 	}
+	
+	//nuevos cambios
 }
