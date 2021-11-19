@@ -1,5 +1,7 @@
 package model;
 
+import javax.swing.JOptionPane;
+
 /**
  * @author Natalia Muñoz
  * @author Juanita Sanabria
@@ -90,5 +92,67 @@ public class Management {
 		return intersectingText;
 	}
 	
-	//nuevos cambios
+	
+	/**
+	 * 
+	 * Metodo de cuenta regresiva dependiendo un parametro
+	 * @param minutes
+	 * parametro que pide el valor de los minutos para la cuenta regresiva
+	 */
+	
+	public void Regresive(int minutes) {
+
+		String timer="";
+		
+		for (int i = minutes; i >= 0; i--) {
+			for (int j = 59; j >= 0; j--) {
+				timer= timer+ (i+":"+j);
+				timer+="\n";
+				
+				System.out.printf("| %02d : %02d | \n", i, j);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		}
+		
+		JOptionPane.showMessageDialog(null,"Año Nuevo!!!!____|=|:)");
+	}
+	
+	/**
+	 * Metodo que remueve caracteres repetidos
+	 * 
+	 * @param word
+	 * parametro que pide la palabra para eliminar los caracteres repetidos
+	 */
+	
+
+	public String removeCharacter(String word) {
+
+		String removeWord ="";
+		//vetor que almacena la palabra
+		String[] splitWord = new String[word.length()];
+
+		for (int i = 0; i < word.length(); i++) {
+			
+			splitWord[i] = word.substring(i, i + 1);
+		}
+		
+		for (int i = 0; i < word.length(); i++) {
+			for (int j = i + 1; j < word.length(); j++) {
+				
+				if (splitWord[j].equalsIgnoreCase(splitWord[i])) {
+					splitWord[j] = "";	
+				}
+				
+			}
+			removeWord+= splitWord[i];
+		}
+			return removeWord;
+
+	}
 }
