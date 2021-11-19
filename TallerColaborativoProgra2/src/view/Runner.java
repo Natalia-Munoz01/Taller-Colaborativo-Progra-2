@@ -43,7 +43,7 @@ public class Runner {
 						"La palabra " + word + " se encuentra " + obj.findWord(word) + " veces");
 				break;
 			case 4:
-
+				JOptionPane.showMessageDialog(null, "La cantidad de vocales encontradas en la cadena es de:" + obj.ContarVocales(cadenaOriginal));
 				break;
 			case 5:
 				
@@ -61,7 +61,8 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, obj.fillCharacters(character, limit, address));
 				break;
 			case 7:
-
+				String c = JOptionPane.showInputDialog("Ingrese el caracter que desea eliminar de la cadena: ");
+				JOptionPane.showMessageDialog(null, "La cadena resultante tras eliminar el caracter : " + c + "  es: "+obj.BorrarCaracter(cadenaOriginal, c) );
 				break;
 			case 8:
 				String cadena2 = JOptionPane.showInputDialog("Ingrese la cadena a intersectar con la Cadena original");
@@ -72,10 +73,10 @@ public class Runner {
 				JOptionPane.showMessageDialog(null, obj.removeCharacter(removeword));
 				break;
 			case 10:
-
+				JOptionPane.showMessageDialog(null, "La cantidad de palabras encontradas en la cadena de texto es: " + obj.ContarPalabras(cadenaOriginal));
 				break;
 			case 11:
-
+				JOptionPane.showMessageDialog(null, "El correo " + cadenaOriginal + " es: "+ obj.ValidarCorreo(cadenaOriginal));
 				break;
 			case 12:
 				continuar = false;

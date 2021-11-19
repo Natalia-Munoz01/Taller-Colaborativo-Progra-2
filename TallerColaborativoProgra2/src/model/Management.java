@@ -1,5 +1,9 @@
 package model;
 
+import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -49,6 +53,25 @@ public class Management {
 		}
 		return cont;
 	}
+	
+
+	/**
+	 *  Método para contar la cantidad de vocales en una cadena de texto
+	   @param cadena1 - cadena original ingresada
+	 *  @return totalVocales
+	 */
+	public int ContarVocales(String cadena1){
+		  int totalVocales=0;
+		  
+		  for(int i =0; i<cadena1.length(); i++){
+		   char c = cadena1.charAt(i);
+		   if((c == 'a')|| (c == 'A') || (c == 'e')|| (c == 'E') || (c == 'i') || (c == 'I')|| (c == 'o')|| (c == 'O') || (c == 'u') || (c == 'U')){
+		   totalVocales++;  
+		  }     
+		  } 
+		  return totalVocales;
+		  
+		  }
 
 	/**
 	 * Método para agregar un caracter n veces al inicio o fin de la cadena
@@ -71,6 +94,17 @@ public class Management {
 		}
 		return auxChain;
 	}
+	
+	/**
+	 * Método para agregar borra caracteres de una cadena de texto
+	 * @param cadena2 - cadena original ingresada
+	 * @param c -  caracter que se desea eliminar
+	 * @return cadenaNuevAa - cadena modificada sin el caracter especificado
+	 */
+	public String BorrarCaracter(String cadena2, String c){
+		  String cadenaNueva = cadena2.replaceAll(c, "");
+		  return cadenaNueva;
+		  }
 	
 	/**
 	 * Método de Interseccion
@@ -155,4 +189,40 @@ public class Management {
 			return removeWord;
 
 	}
+	
+	/**
+	 * Metodo que cuenta la cantidad de palabras presentes en una cadena de texto
+	 * 
+	 * @param cadena3-  cadena original ingresada
+	 * @return numeroPalabras - entero con el numero de palabras encontradas
+	 */
+	
+	public int ContarPalabras(String cadena3){
+		  StringTokenizer st = new StringTokenizer(cadena3);
+		  int numeroPalabras = st.countTokens();
+		  return numeroPalabras ;
+		  }
+	
+	
+	/**
+	 * Metodo que cuenta valida una direccion de correo electrónico
+	 * 
+	 * @param cadena4-  cadena original ingresada
+	 * @return validacion - valor lógico de la validez del correo ingresado
+	 */
+	 public boolean ValidarCorreo(String cadena4){
+		  Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+		                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+		  Matcher mather = pattern.matcher(cadena4);
+		  boolean validacion;
+		  
+		  if(mather.find()==true){
+		  validacion =true;
+		  
+		  }else {
+		  validacion = false;
+		  }
+		  
+		  return validacion;
+		  }
 }
