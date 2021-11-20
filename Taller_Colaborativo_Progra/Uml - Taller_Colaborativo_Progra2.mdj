@@ -152,7 +152,7 @@
 											"top": 197,
 											"width": 355.81787109375,
 											"height": 13,
-											"text": "+toolsForname: TextTools",
+											"text": "-toolsForname: TextTools",
 											"horizontalAlignment": 0
 										}
 									],
@@ -822,7 +822,7 @@
 									"font": "Arial;13;0",
 									"left": 527,
 									"top": 284.0430107526882,
-									"width": 12.65087890625,
+									"width": 13.83154296875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -1114,6 +1114,7 @@
 								"$ref": "AAAAAAF9O1RunIcNurk="
 							},
 							"name": "toolsForname",
+							"visibility": "private",
 							"type": {
 								"$ref": "AAAAAAF9O1R+aYc2yu4="
 							}
